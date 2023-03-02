@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/success.css')}}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="circle">
+        <i class="checkmark">✓</i>
+      </div>
+      <h1>Success</h1>
+      <p>
+        Your database saved under <br />
+        <span>"{{name}}" </span> <br />
+        <span style="color: #88b04b">time for the request:</span> {{time}}
+        Seconds
+      </p>
+    </div>
+  </body>
+</html>
