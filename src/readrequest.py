@@ -1,14 +1,14 @@
-def readreq(spark,user,password):
-    readrequest = spark.read \
-         .format("jdbc") \
-         .option("driver","com.mysql.cj.jdbc.Driver") \
-         .option("url", "jdbc:mysql://localhost:3306/employees") \
-         .option("user", user) \
-         .option("password", password) \
-         .option("dbtable","salaries") \
-         .option("lowerBound", 0)\
-         .option("upperBound",440000)\
-         .option("numPartitions", 6)\
-         .option("partitionColumn", "emp_no")\
-         .load()
-    return readrequest
+def readreq(spark,user,password,ip,port,database):
+   dataframe = spark.read \
+    .format("jdbc") \
+    .option("driver","com.mysql.cj.jdbc.Driver") \
+    .option("url", "jdbc:mysql://"+ip+":"+port+"/information_schema") \
+    .option("user", user) \
+    .option("password", password) \
+    .option("dbtable","(select * from tables where TABLE_SCHEMA = '"+database+"') as tables") \
+    .load()
+   array = dataframe.collect()
+   newarray =[]
+   for i in array:
+    newarray.append(i.TABLE_NAME)
+   return newarray
