@@ -31,28 +31,24 @@
     />
     <title>Table selection</title>
   </head>
-  <body>
+  <body style="background-color: #eef0f3">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
       <div class="container">
-        <a class="navbar-brand" href="#">Table selection</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="#">
+          <img
+            src="{{url_for('static', filename='Kepler.png')}} "
+            alt="logo"
+            width="130"
+            height="auto"
+          />
+        </a>
       </div>
     </nav>
 
     <main class="login-form">
       <div class="cotainer">
         <div class="row justify-content-center">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="card">
               <div class="card-header">Table select</div>
               <div class="card-body">
@@ -67,7 +63,7 @@
                     >
                       {%for i in range(0, len)%}
                       <!-- prettier-ignore -->
-                      <option value={{readResult[i]}}>{{readResult[i]}}</option>
+                      <option value={{tables[i]}}>{{tables[i]}}</option>
                       {%endfor%}
                     </select>
                   </div>
@@ -83,6 +79,9 @@
                     <span id="loadertext" hidden> Loading... </span>
                     <span id="submit">Import</span>
                   </button>
+                  <a href="/databases" class="btn btn-secondary"
+                    >Back to Databases</a
+                  >
                 </form>
               </div>
             </div>

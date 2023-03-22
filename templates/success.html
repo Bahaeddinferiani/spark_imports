@@ -16,21 +16,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Success</title>
   </head>
-  <body>
+  <body style="background-color: #eef0f3">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
       <div class="container">
-        <a class="navbar-brand" href="#">Success</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="/">
+          <img
+            src="{{url_for('static', filename='Kepler.png')}} "
+            alt="logo"
+            width="130"
+            height="auto"
+          />
+        </a>
       </div>
     </nav>
     <div class="col d-flex justify-content-center">
@@ -42,10 +38,10 @@
             <span class="text-success"> {{name}}</span>
           </h5>
           <p class="card-text">whole process took {{time}} seconds.</p>
-          <a href="/table-selection" class="btn btn-success"
-            >import another table</a
-          >
+          <a href="/tables" class="btn btn-success">Import another table</a>
+          <a href="/" class="btn btn-primary">Back</a>
         </div>
+
         <div class="card-footer text-muted"></div>
       </div>
     </div>

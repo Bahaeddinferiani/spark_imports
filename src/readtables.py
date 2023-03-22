@@ -1,4 +1,4 @@
-def readreq(spark,user,password,ip,port,database):
+def readtables(spark,user,password,ip,port,database):
    dataframe = spark.read \
     .format("jdbc") \
     .option("driver","com.mysql.cj.jdbc.Driver") \

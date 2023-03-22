@@ -31,21 +31,17 @@
     />
     <title>Database import</title>
   </head>
-  <body>
+  <body style="background-color: #eef0f3">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
       <div class="container">
-        <a class="navbar-brand" href="/import">Database import</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="#">
+          <img
+            src="{{url_for('static', filename='Kepler.png')}} "
+            alt="logo"
+            width="130"
+            height="auto"
+          />
+        </a>
       </div>
     </nav>
 
@@ -71,26 +67,35 @@
 
                   <div class="mb-2">
                     <label for="username" class="form-label"
-                      >RDBMS IP adress</label
+                      >RDBMS adress</label
                     >
-                    <input type="text" class="form-control" name="ip" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="ip"
+                      placeholder="mysql.com"
+                    />
                   </div>
                   <div class="mb-2">
                     <label for="username" class="form-label">RDBMS port</label>
                     <input type="text" class="form-control" name="port" />
-                  </div>
-                  <div class="mb-2">
-                    <label for="ip" class="form-label">Database name</label>
-                    <input type="text" class="form-control" name="schema" />
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Optional
+                    </small>
                   </div>
                   <div class="mb-2">
                     <label for="username" class="form-label"
                       >Database user</label
                     >
-                    <input type="text" class="form-control" name="username" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      placeholder="User"
+                    />
                   </div>
 
-                  <div class="mb-2">
+                  <div class="mb-3">
                     <label for="password" class="form-label"
                       >User password</label
                     >
@@ -98,6 +103,7 @@
                       type="password"
                       class="form-control"
                       name="password"
+                      placeholder="Password"
                     />
                   </div>
                   <button type="submit" class="btn btn-primary">
